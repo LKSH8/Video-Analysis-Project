@@ -1,0 +1,10 @@
+# Optimized ByteTrack configuration for CCTV vehicle and person tracking
+# Prevents ID switching across occlusions, tree/pole shadows, and stride gaps
+
+tracker_type: bytetrack
+track_high_thresh: 0.35   # High-score detection threshold for primary matching
+track_low_thresh: 0.15    # Low-score detection threshold for secondary matching
+new_track_thresh: 0.40    # Require higher confidence before spawning a brand new track
+track_buffer: 90          # Keep memory of lost tracks for 90 frames (prevents splitting across occlusions)
+match_thresh: 0.70        # IoU matching tolerance for moving objects across frame strides
+fuse_score: True          # Fuse score with motion prediction

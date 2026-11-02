@@ -1,0 +1,53 @@
+system:
+  camera_id: "cam1"
+  db_path: "data/cctv.db"
+  evidence_dir: "data/evidence"
+  videos_dir: "data/videos"
+
+ingest:
+  frame_stride: 4
+
+perceive:
+  model_name: "yolo11n.pt"
+  tracker_config: "custom_tracker.yaml"
+  imgsz: 640
+  confidence_threshold: 0.35
+  min_track_seconds: 1.5
+  target_classes:
+    - "person"
+    - "car"
+    - "laptop"
+    - "backpack"
+    - "handbag"
+    - "suitcase"
+    - "cell phone"
+    - "bottle"
+    - "book"
+    - "cup"
+    - "chair"
+
+events:
+  object_stable_seconds: 1.0
+  object_missing_seconds: 3.0
+  object_lookback_seconds: 2.0
+  near_ratio: 1.0
+  near_min_seconds: 1.0
+  loiter_radius_ratio: 0.5
+  loiter_seconds: 10.0
+  near_px_ratio: 1.0
+  occlusion_iou_threshold: 0.3
+
+evidence:
+  pre_roll_seconds: 2.0
+  post_roll_seconds: 2.0
+  max_clip_seconds: 20.0
+
+query:
+  parser: "hybrid" # rules | gemini | hybrid
+  default_limit: 20
+  temporal_window_seconds: 30.0
+
+llm:
+  model: "gemini-3.5-flash-lite"
+  timeout_seconds: 10.0
+  temperature: 0.0

@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "semantic-cctv"
+version = "0.1.0"
+description = "Semantic CCTV Event Retrieval and Temporal Multi-Camera Incident Reconstruction"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "ultralytics>=8.3.0",
+    "opencv-python>=4.8.0",
+    "numpy>=1.24.0",
+    "pandas>=2.0.0",
+    "pillow>=10.0.0",
+    "pyyaml>=6.0.0",
+    "pydantic>=2.0.0",
+    "imageio-ffmpeg>=0.5.0",
+    "streamlit>=1.30.0",
+    "pytest>=7.0.0",
+    "google-genai>=0.1.0",
+    "python-dotenv>=1.0.0",
+    "tqdm>=4.66.0"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

@@ -1,0 +1,33 @@
+# Environment & Secrets
+.env
+*.env
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtualenv
+venv/
+.venv/
+env/
+
+# Data & Evidence
+data/videos/*.mp4
+data/videos/*.avi
+data/videos/*.mov
+data/evidence/*
+data/cctv.db
+
+# Model weights
+*.pt
+*.onnx
+
+# Testing & Logs
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+
+# Antigravity / IDE
+.vscode/
+.idea/
